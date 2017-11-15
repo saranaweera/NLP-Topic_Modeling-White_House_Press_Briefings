@@ -9,4 +9,4 @@
 
 Developed a flask app to be an A.I. version of Sean Spicer :)
 
-I'm employed a Markov chain text generator and used Sean Spicer's answers to press questions as the corpus for it. Markov Chain is using a state size of 3.
+I employed a Markov chain text generator and used Sean Spicer's answers to press questions as the corpus for it. Markov Chain is using a state size of 3.
