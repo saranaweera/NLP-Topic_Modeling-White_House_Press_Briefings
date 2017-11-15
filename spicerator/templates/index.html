@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Spicerator</title>
+	<link rel="stylesheet" href="static/styles.css">
+</head>
+
+<body class='center'>
+		<img src='/static/logo.jpeg' align="middle"/>
+		<h1 id='head1'>White House Press Briefing with Sean Spicer<sup>*</sup></h1>
+
+		<div id="article_heading" class="article-heading">
+	    <div id="article_heading_title" class="heading-title">The White House</div>
+	    <div id="article_heading_subtitle" class="heading-subtitle">Office of the (Arificial) Press Secretary - THIS IS NOT AN OFFICIAL GOVERNMENT SITE AND NOT AFFILIATED WITH THE WHITE HOUSE IN ANYWAY</div>
+		</div>
+		<div class='textArea'>
+			<p>MR. SPICER:  Hey, guys.  So as we touched on yesterday, the President has got a full schedule here in Washington ahead of the foreign trip.  This morning, he had a call with the King of Jordan, following up on the King’s recent visit to the White House last month.  We expect a readout on that shortly. </p>
+			<div class="centered">
+				<div id='QandA'>
+
+				</div>
+
+				<p class='questionText'> Ask a question:</p>
+				<input type="text" id="questionText" value=""  class='inputBox' size="50%">
+				<input type="button" id="askButton" value="Ask Sean"  class='button'>
+			</div>
+		</div>
+
+
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	    <script src="static/index.js" type='text/javascript'></script>
+      <!--<script src="{{url_for('static',filename='index.js')}}"></script>-->
+	    <script type="text/javascript">
+
+        $("#askButton").on("click", function() {
+					addQuestion();
+					addAnswer();
+        });
+
+				function addQuestion(){
+					var question = document.getElementById("questionText").value;
+
+					var newItem = document.createElement("p");
+					newItem.classList.add("questionText");
+					var textnode = document.createTextNode("Q: ".concat(question).concat('?'));
+					newItem.appendChild(textnode);
+
+					var QandADiv = document.getElementById("QandA");
+					QandADiv.appendChild(newItem);
+
+
+				}
+
+				function addAnswer(){
+					$.ajax({
+						type: "POST",
+						url: "/predict/",
+						data: '',
+						success: function(data){
+
+							var newItem = document.createElement("p");
+							var textnode = document.createTextNode("MR. SPICER: ".concat(data["predictions"]));
+							newItem.appendChild(textnode);
+
+							var QandADiv = document.getElementById("QandA");
+							QandADiv.appendChild(newItem);
+
+							//var thinkingElem = document.getElementById("thinking");
+							//thinkingElement.innerHTML = "";
+						}
+					});
+					// var question = document.getElementById("questionText").value;
+					//
+					// var newItem = document.createElement("p");
+					// var textnode = document.createTextNode("Q: ".concat(question));
+					// newItem.appendChild(textnode);
+					//
+					// var QandADiv = document.getElementById("QandA");
+					// QandADiv.appendChild(newItem);
+
+				}
+
+
+	   </script>
+</body>
+</html>

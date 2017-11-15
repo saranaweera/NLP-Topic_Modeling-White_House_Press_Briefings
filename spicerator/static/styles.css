@@ -1,0 +1,65 @@
+
+h1 {
+	font-size: 800%;
+	font-family: "Courier New", Times, serif;
+
+}
+
+#head1 {
+	font-size: 240%;
+	font-family: "Source Sans Pro","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
+
+	color: rgba(0,60,128,0.82);
+	line-height: 55px;
+}
+
+.heading-title{
+	font-family: "Arial", serif;
+	font-weight: bold;
+}
+
+.heading-subtitle{
+	font-size: 80%;
+	font-family: "Arial", serif;
+}
+
+.textArea{
+	font-family: "Source Sans Pro","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Nimbus Sans L",sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	color: #333;
+}
+
+
+.button {
+    background-color: rgba(0,60,128,0.82);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.inputBox{
+	background-color: rgba(0,60,128,0.2);
+	border:	10px;
+	color: rgba(0,60,128,1);
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+.questionText{
+	font-weight: bold;
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+    border: 0px;
+    padding: 10px;
+}
